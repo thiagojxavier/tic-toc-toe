@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body class="dark">
+    <header>
+      <h1>Tic-Tac-Toe</h1>
+    </header>
+    <section class="start-game">
+      <h2>Bem vindo ao tic-tac-toe!</h2>
+      <section class="name-players">
+        <form>
+          <label for="name-player-1">Nome do Player 1:</label>
+          <input type="text" name="name-player-1" id="name-player-1" maxlength="20" />
+          <p>Digite um nome com até 20 caracteres</p>
+          <label for="name-player-2">Nome do Player 2:</label>
+          <input type="text" name="name-player-2" id="name-player-2" maxlength="20" />
+          <p>Digite um nome com até 20 caracteres</p>
+        </form>
+      </section>
+      <section class="options-skin-table">
+        <h2>Selecione a cor do tabuleiro:</h2>
+        <div class="skins-container">
+          <div>
+            <input
+              type="radio"
+              name="skin"
+              id="default"
+              value="default"
+              checked
+            />
+            <label for="default" class="skin">Default</label>
+          </div>
+          <div>
+            <input type="radio" name="skin" id="dark" value="dark" />
+            <label for="dark" class="skin">Dark</label>
+          </div>
+          <div>
+            <input type="radio" name="skin" id="blue" value="blue" />
+            <label for="blue" class="skin">Blue</label>
+          </div>
+        </div>
+      </section>
+      <button id="start-btn">Iniciar</button>
+    </section>
+    <section class="end-game hidden">
+
+      </div>
+    </section>
+    <section class="end-result hidden">
+      <h2>Fim de Jogo!</h2>
+      <h3></h3>
+      <p></p>
+      <div>
+        <button class="play-again">Jogar Novamente</button>
+        <button class="end-btn">Encerrar</button>
+      </div>
+    </section>
+    <main>
+      <section class="info-players hidden">
+        <div class="player-container turn">
+          <p class="player-1">
+            <span class="player-strong">Player 1:</span>
+            <span class="name-1"> </span>
+          </p>
+          <p class="score-1"></p>
+        </div>
+        <div class="player-container">
+          <p class="score-2"></p>
+          <p class="player-2">
+            <span class="player-strong">Player 2:</span>
+            <span class="name-2"> </span>
+          </p>
+        </div>
+      </section>
+      <section class="tic-tac-toe o-or-x hidden">
+        <div class="block" id="block-0"></div>
+        <div class="block" id="block-1"></div>
+        <div class="block" id="block-2"></div>
+        <div class="block" id="block-3"></div>
+        <div class="block" id="block-4"></div>
+        <div class="block" id="block-5"></div>
+        <div class="block" id="block-6"></div>
+        <div class="block" id="block-7"></div>
+        <div class="block" id="block-8"></div>
+      </section>
+      <div class="alert">
+        <p>O lugar desejado já está preenchido! Por favor selecione um bloco vazio!</p>
+      </div>
+    </main>
+    <footer>
+      <p>developed for me</p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

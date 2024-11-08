@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-1: #F2F2F2;
+    --color-2: #40403E;
+    --color-table-1: #F2D0A7;
+    --color-table-2: #40403E;
+    --color-alert: #BF0F1E;
+    --color-victory: #F2D16D;
+}
+
+body {
+    display: flex;
+    font-family: "Lato", sans-serif;
+    background-color: var(--color-1);
+    position: relative;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.dark {
+    background-color: var(--color-2);
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+
+.start-game, .end-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    min-height: 250px;
+    background-color: var(--color-1);
+    border: 3px solid var(--color-victory);
+    box-shadow: 2px 2px 1px var(--color-table-1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    gap: 15px;
+    z-index: 2;
+    animation: emerging 1s;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.options-skin-table {
+    text-align: center;
+    padding: 3px;
+}
+
+.skins-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+form > p {
+    font-size: .8em;
+    font-style: italic;
+}
+
+.skins-container > div {
+    display: flex;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label.skin:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    border-radius:50%;
+    border: 3px solid var(--color-2);
+    margin-right: 5px;
+}
+
+.skin {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: var(--color-2);
+    font-size: 30px;
+    text-align: center;
+    line-height: 12px;
+}
+
+#default:checked + label:before {
+    color: var(--color-table-1);
+}
+
+#blue:checked + label:before {
+    color: #11468C;
+}
+
+.name-players > form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input[type="text"] {
+    display: block;
+    padding: 7px;
+}
+
+label[for="default"], label[for="dark"], label[for="blue"] {
+    text-shadow: #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+}
+
+label[for="default"] {
+    color: #F2D0A7;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+label[for="dark"] {
+    color: var(--color-2);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+label[for="blue"] {
+    color: #11468C;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.start-game > h2, .end-game > h2 {
+    text-transform: uppercase;
+}
+
+.start-game > button {
+    display: block;
+}
+
+.start-game > button, .end-game > div > button {
+    margin: 0 auto;
+    padding: .7em 1.4em;
+    background-color: var(--color-2);
+    border: none;
+    color: var(--color-1);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.start-game > button:hover {
+    background-color: var(--color-table-1);
+    color: var(--color-2);
+}
+
+.end-game > div {
+    display: flex;
+    justify-content: center;
+}
+
+.end-game > h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-victory);
+    text-shadow: #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+}
+
+.end-game button {
+    padding: .7em 1.4em;
+}
+
+main {
+    flex: 1 1 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.info-players {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player-1, .player-2 {
+    padding: 10px;
+}
+
+.player-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.player-strong {
+    font-weight: 700;
+}
+
+.score-1, .score-2 {
+    padding: 0 10px;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+div.turn {
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid var(--color-2);
+    animation: growBorder .8s;
+}
+
+.tic-tac-toe {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    background-color: var(--color-table-1);
+    box-shadow: 5px 4px 2px var(--color-table-2);
+    animation: emerging 2s;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block:nth-child(1), .block:nth-child(2), .block:nth-child(4), .block:nth-child(5), .block:nth-child(7), .block:nth-child(8) {
+    border-right: 3px solid var(--color-table-2);
+}
+
+.block:nth-child(1), .block:nth-child(2), .block:nth-child(3), .block:nth-child(4), .block:nth-child(5), .block:nth-child(6) {
+    border-bottom: 3px solid var(--color-table-2);
+}
+
+.o-or-x {
+    color: var(--color-table-2);
+    font-size: 6em;
+    font-weight: 700;
+}
+
+.alert {
+    display: flex;
+    max-width: 450px;
+    margin: 0 auto;
+    color: var(--color-alert);
+    font-weight: 700;
+    opacity: 0;
+    text-align: center;
+}
+
+.alert.active {
+    opacity: 1;
+    animation: disappearing 5s ease-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+footer {
+    padding: 10px;
+}
+
+.disappearing {
+    animation: disappearing 1s;
+}
+
+.disappearing-2 {
+    animation: disappearing-2 2s;
+}
+
+img {
+    width: 80px;
+    margin: 0 auto;
+}
+
+@keyframes emerging {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes disappearing {
+    0% {
+        opacity: 1;
+    } 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes growBorder {
+    0% {
+        border-width: 5px;
+      }
+      50% {
+        border-width: 10px;
+      }
+      100% {
+        border-width: 5px;
+    }
+}
