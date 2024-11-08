@@ -127,24 +127,20 @@ input[type="text"] {
 
 label[for="default"], label[for="dark"], label[for="blue"] {
     text-shadow: #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 label[for="default"] {
     color: #F2D0A7;
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
 label[for="dark"] {
     color: var(--color-2);
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
 label[for="blue"] {
     color: #11468C;
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .start-game > h2, .end-game > h2 {
@@ -282,7 +278,7 @@ div.turn {
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 footer {
@@ -327,5 +323,46 @@ img {
       }
       100% {
         border-width: 5px;
+    }
+}
+
+@media (max-width: 750px) {
+    .start-game, .end-game {
+        width: 300px;
+        min-height: 250px;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .player-1, .player-2 {
+        padding: 5px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    .tic-tac-toe {
+        width: 300px;
+        height: 300px;
+    }
+
+    .o-or-x {
+        font-size: 3em;
+        font-weight: 700;
+    }
+
+    .alert {
+        max-width: 300px;
+    }
+}
+
+@media (max-height: 700px) {
+    .tic-tac-toe {
+        width: 300px;
+        height: 300px;
+    }
+
+    .o-or-x {
+        font-size: 3em;
+        font-weight: 700;
     }
 }
